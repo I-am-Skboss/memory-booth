@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Memory Booth - Business Consultancy for New and Baby Businesses. Future-proof your venture with Gen Z insights.">
+    <title>Memory Booth | New Gen Consultancy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script> <!-- Vector Icons -->
+</head>
+
+<body>
+    <canvas id="background-canvas"></canvas> <!-- Interactive Background -->
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo-wrapper">
+                <!-- User requested: Black image on Dark Mode, White image on Light Mode -->
+                <!-- Note: This might be low contrast depending on image content, but following specific instruction. -->
+                <img src="White.png" alt="Memory Booth Logo" class="logo-img light-mode-logo">
+                <img src="Black.jpeg" alt="Memory Booth Logo" class="logo-img dark-mode-logo">
+                <span class="nav-brand-name">Memory Booth</span>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h2 class="hero-pre-title">Memory Booth</h2>
+            <h1 class="glitch-text" data-text="We Shape Tomorrow">We Shape Tomorrow</h1>
+            <p class="hero-sub">Consultancy for the brave, the new, and the next. Level up your startup.</p>
+            <a href="#contact" class="cta-button primary">Start Now</a>
+        </div>
+        <div class="hero-image-container">
+            <!-- Hero Toggle: White for light mode, Black for dark mode -->
+            <img src="White.png" alt="Memory Booth Logo Art" class="hero-img light-mode-hero"
+                style="width: 100%; height: 100%; object-fit: contain;">
+            <img src="Black.jpeg" alt="Memory Booth Logo Art" class="hero-img dark-mode-hero"
+                style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+    </header>
+
+    <section id="capabilities" class="services"> <!-- Reusing services class for grid layout -->
+        <div class="section-header">
+            <h2>What We Can Do</h2>
+            <p>Real world problems. Real world fixes.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <h3>Restaurants</h3>
+                <p>Improve customer satisfaction by optimizing cooking speeds, refining taste profiles, and elevating
+                    the overall dining experience.</p>
+            </div>
+            <div class="card">
+                <h3>Coaching Institutes</h3>
+                <p>Streamline operations with online student monitoring systems, including automated fee management and
+                    marks tracking.</p>
+            </div>
+            <div class="card">
+                <h3>Schools</h3>
+                <p>Digitize performance tracking with a comprehensive data record site for every student's academic
+                    journey.</p>
+            </div>
+            <div class="card">
+                <h3>Real Estate</h3>
+                <p>Virtual tours, lead management systems, and automated property listings to close deals faster and
+                    smoother.</p>
+            </div>
+            <div class="card">
+                <h3>Corporate Firms</h3>
+                <p>Workflow automation, data-driven decision tools, and employee performance dashboard for modern
+                    giants.</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce</h3>
+                <p>Inventory tracking, sales analytics, and customer behavior reports to skyrocket your online store.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header">
+            <h2>Our Vibe Check</h2>
+            <p>What we bring to the table.</p>
+        </div>
+        <div class="grid-container">
+            <div class="card">
+                <h3>New Business Setup</h3>
+                <p>From zero to one. We handle the structure while you handle the dream.</p>
+            </div>
+            <div class="card">
+                <h3>Startup Growth</h3>
+                <p>Scaling up without selling out. Strategies for the modern market.</p>
+            </div>
+            <div class="card">
+                <h3>App Development</h3>
+                <p>Custom mobile and web applications built for business efficiency or personal use-cases. On-demand
+                    tech solutions.</p>
+            </div>
+            <div class="card">
+                <h3>Brand Identity</h3>
+                <p>Making you look good. Real good. We define your voice in a noisy world.</p>
+            </div>
+            <div class="card">
+                <h3>Efficiency & Quality</h3>
+                <p>We shorten your processing time and significantly improve your brand quality. Professional polish for
+                    ogni growth.</p>
+            </div>
+            <div class="card highlights">
+                <h3>24/7 Support</h3>
+                <p>We're always online.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h2>Why Memory Booth?</h2>
+            <p>We aren't your dad's consultancy. We speak Gen Z, we breathe digital, and we know how to make noise in a
+                crowded room. We help you create memories, not just metrics.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-wrapper">
+            <h2>Let's Talk</h2>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('Vibe checked! We will reach out.');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Tell us about your startup" rows="4"></textarea>
+                <button type="submit" class="cta-button secondary">Send It</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="legal" class="about"
+        style="background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="about-text" style="max-width: 800px; padding: 5rem 0;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Legal & Privacy</h2>
+            <div style="text-align: left; font-size: 1rem; color: var(--secondary-text);">
+                <p style="margin-bottom: 1rem;"><strong>Privacy Policy:</strong> Your privacy is a priority at Memory
+                    Booth. We only collect essential information required to provide our consultancy and development
+                    services. We protect your data with modern security standards.</p>
+
+                <div class="company-details"
+                    style="margin-top: 2rem; padding: 2rem; background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color);">
+                    <h3 style="margin-bottom: 1rem; color: var(--text-color);">Official Business Information</h3>
+                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">Firm:</strong> Memory
+                        Booth</p>
+                    <p style="margin-bottom: 0.5rem;"><strong style="color: var(--text-color);">DUNS Number:</strong>
+                        772046886</p>
+                    <p><strong style="color: var(--text-color);">GST Number:</strong> 09KCOPK6111E1ZF</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-container">
+            <p>&copy; 2026 Memory Booth. All rights reserved. <span class="footer-tag">Stay cool.</span></p>
+            <div class="footer-links">
+                <a href="#legal">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
