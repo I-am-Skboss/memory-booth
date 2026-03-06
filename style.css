@@ -599,3 +599,130 @@ footer {
     opacity: 1;
     transform: none;
 }
+
+/* MojiBoom Card Refinement */
+.mojiboom-card {
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    /* Limit width to feel like a featured card */
+    margin: 2rem auto;
+    border: 1px solid var(--border-color);
+}
+
+.mojiboom-card-banner {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.mojiboom-card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.mojiboom-card:hover .mojiboom-card-banner img {
+    transform: scale(1.05);
+}
+
+.mojiboom-card-content {
+    padding: 2.5rem;
+}
+
+.mojiboom-card-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.mojiboom-card-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.mojiboom-card-title-group h3 {
+    font-size: 2.25rem !important;
+    margin: 0 !important;
+    font-family: var(--font-heading);
+}
+
+.mojiboom-card-title-group .tagline {
+    font-size: 1rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-top: 0.25rem;
+}
+
+.mojiboom-card-content .description {
+    font-size: 1.1rem;
+    color: var(--secondary-text);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.mojiboom-card-ctas {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.mojiboom-card-ctas .cta-button {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    width: auto;
+    min-width: max-content;
+    white-space: nowrap;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+.mojiboom-card-ctas .cta-button.secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--border-color);
+}
+
+.mojiboom-card-ctas .cta-button.secondary:hover {
+    background-color: var(--card-bg);
+    border-color: var(--text-color);
+}
+
+/* Mobile Alignment & Styling Refinement */
+@media (max-width: 768px) {
+    .mojiboom-card {
+        text-align: center;
+        margin: 1rem auto;
+    }
+
+    .mojiboom-card-header {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+
+    .mojiboom-card-ctas {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .mojiboom-card-banner {
+        height: 200px;
+    }
+
+    .mojiboom-card-title-group h3 {
+        font-size: 1.85rem !important;
+    }
+
+    .mojiboom-card-content {
+        padding: 2rem 1.5rem;
+    }
+}
