@@ -1,0 +1,65 @@
+# ===== Installers & Binaries =====
+*.msi
+*.exe
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# ===== Node / npm =====
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+package-lock.json
+
+# ===== OS Generated Files =====
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Linux
+*~
+
+# ===== Editor & IDE Files =====
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# ===== Logs & Temp Files =====
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# ===== Environment & Secrets =====
+.env
+.env.local
+.env.*.local
+secrets.*
+config.local.*
+
+# ===== Build Output (if added later) =====
+dist/
+build/
+out/
+.cache/
