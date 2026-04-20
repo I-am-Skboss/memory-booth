@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Anuvaish Creations – Timeless Heirlooms in Gold</title>
+  <meta name="description" content="Hand-crafted Indian jewellery from the artisans of Anuvaish Creations. BIS Hallmarked, Certified Diamonds, Lifetime Exchange."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- BOTTOM NAV (fixed) -->
+  <nav class="bottom-nav" id="bottom-nav">
+    <button class="nav-item active" id="nav-home" onclick="showPage('home')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 9.5C6 8.396 6.896 7.5 8 7.5h8c1.104 0 2 .896 2 2V19a1 1 0 01-1 1H15v-4h-6v4H7a1 1 0 01-1-1V9.5z"/>
+        <path d="M3 10.5L12 3l9 7.5"/>
+      </svg>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" id="nav-shop" onclick="showPage('shop')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="7" height="7" rx="1"/>
+        <rect x="14" y="3" width="7" height="7" rx="1"/>
+        <rect x="3" y="14" width="7" height="7" rx="1"/>
+        <rect x="14" y="14" width="7" height="7" rx="1"/>
+      </svg>
+      <span>Shop</span>
+    </button>
+    <button class="nav-item" id="nav-wishlist" onclick="showPage('wishlist')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+      </svg>
+      <span>Wishlist</span>
+    </button>
+    <button class="nav-item" id="nav-contact" onclick="showPage('contact')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.22 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+      </svg>
+      <span>Contact</span>
+    </button>
+  </nav>
+
+  <!-- ===== HOME PAGE ===== -->
+  <div class="page active" id="page-home">
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4AF37">
+          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/>
+        </svg>
+        <span class="logo-text">ANUVAISH</span>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero-section">
+      <div class="hero-overlay"></div>
+      <img class="hero-img" src="assets/images/hero_necklace.png" alt="Ornate gold Indian necklace"/>
+      <div class="hero-content">
+        <p class="hero-tag">— BRIDAL COLLECTION 2026 —</p>
+        <h1 class="hero-title">Timeless<br>Heirlooms<br>in Gold.</h1>
+        <p class="hero-sub">Hand-crafted Indian jewellery from the artisans of Anuvaish Creations.</p>
+        <button class="btn-primary" onclick="showPage('shop')">Explore Collection &nbsp;→</button>
+      </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <div class="trust-bar">
+      <span>✦ BIS HALLMARKED</span>
+      <span>✦ CERTIFIED DIAMONDS</span>
+      <span>✦ LIFETIME EXCHANGE</span>
+      <span>✦ FREE SHIPPING</span>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="section categories-section">
+      <div class="section-header">
+        <div>
+          <p class="section-label">SHOP BY</p>
+          <h2 class="section-title">Categories</h2>
+        </div>
+        <button class="see-all" onclick="showPage('shop')">See all →</button>
+      </div>
+      <div class="categories-scroll">
+        <div class="category-card" onclick="showPage('shop')">
+          <img src="assets/images/kundan_haar.png" alt="Necklaces"/>
+          <div class="category-overlay"></div>
+          <div class="category-info">
+            <span class="category-name">Necklaces</span>
+            <span class="category-desc">Heirloom statement pieces</span>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('shop')">
+          <img src="assets/images/gold_ring.png" alt="Rings"/>
+          <div class="category-overlay"></div>
+          <div class="category-info">
+            <span class="category-name">Rings</span>
+            <span class="category-desc">Forever in gold &amp; diamond</span>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('shop')">
+          <img src="assets/images/diamond_earrings.png" alt="Earrings"/>
+          <div class="category-overlay"></div>
+          <div class="category-info">
+            <span class="category-name">Earrings</span>
+            <span class="category-desc">Jhumkas, studs &amp; chandbalis</span>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('shop')">
+          <img src="assets/images/bangles_market.png" alt="Bangles"/>
+          <div class="category-overlay"></div>
+          <div class="category-info">
+            <span class="category-name">Bangles</span>
+            <span class="category-desc">Traditional &amp; kada designs</span>
+          </div>
+        </div>
+        <div class="category-card" onclick="showPage('shop')">
+          <img src="assets/images/mangalsutra.png" alt="Mangalsutra"/>
+          <div class="category-overlay"></div>
+          <div class="category-info">
+            <span class="category-name">Mangalsutra</span>
+            <span class="category-desc">Symbol of eternal union</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PIECES -->
+    <section class="section featured-section">
+      <div class="section-header">
+        <div>
+          <p class="section-label">CURATED</p>
+          <h2 class="section-title">Featured Pieces</h2>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/kundan_haar.png" alt="Royal Kundan Haar"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Royal Kundan Haar</p>
+            <p class="product-price">₹ 1,85,000</p>
+          </div>
+        </div>
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/temple_necklace.png" alt="Lakshmi Temple Necklace"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Lakshmi Temple Necklace</p>
+            <p class="product-price">₹ 1,42,000</p>
+          </div>
+        </div>
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/gold_ring.png" alt="Solitaire Diamond Ring"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Solitaire Diamond Ring</p>
+            <p class="product-price">₹ 89,500</p>
+          </div>
+        </div>
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/diamond_earrings.png" alt="Peacock Jhumka"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Peacock Jhumka</p>
+            <p class="product-price">₹ 42,000</p>
+          </div>
+        </div>
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/temple_necklace.png" alt="Heart Diamond Pendant"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Heart Diamond Pendant</p>
+            <p class="product-price">₹ 35,600</p>
+          </div>
+        </div>
+        <div class="product-card" onclick="showPage('shop')">
+          <div class="product-img-wrap">
+            <img src="assets/images/mangalsutra.png" alt="Classic Mangalsutra"/>
+          </div>
+          <div class="product-info">
+            <p class="product-name">Classic Mangalsutra</p>
+            <p class="product-price">₹ 58,000</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p class="footer-brand">Anuvaish Creations</p>
+      <p class="footer-tagline">Where tradition meets timeless elegance.</p>
+    </footer>
+
+  </div><!-- /HOME PAGE -->
+
+  <!-- ===== SHOP PAGE ===== -->
+  <div class="page" id="page-shop">
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4AF37">
+          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/>
+        </svg>
+        <span class="logo-text">ANUVAISH</span>
+      </div>
+    </header>
+
+    <div class="shop-hero">
+      <p class="section-label">THE COLLECTION</p>
+      <h2 class="section-title">All Categories</h2>
+      <div class="shop-logo-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#D4AF37">
+          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="all-categories-list">
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/kundan_haar.png" alt="Necklaces" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">01</span>
+          <div>
+            <p class="allcat-name">Necklaces</p>
+            <p class="allcat-desc">Heirloom statement pieces</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/gold_ring.png" alt="Rings" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">02</span>
+          <div>
+            <p class="allcat-name">Rings</p>
+            <p class="allcat-desc">Forever in gold &amp; diamond</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/diamond_earrings.png" alt="Earrings" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">03</span>
+          <div>
+            <p class="allcat-name">Earrings</p>
+            <p class="allcat-desc">Jhumkas, studs &amp; chandbalis</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/bangles_market.png" alt="Bangles" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">04</span>
+          <div>
+            <p class="allcat-name">Bangles</p>
+            <p class="allcat-desc">Traditional &amp; kada designs</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/mangalsutra.png" alt="Mangalsutra" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">05</span>
+          <div>
+            <p class="allcat-name">Mangalsutra</p>
+            <p class="allcat-desc">Symbol of eternal union</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/hero_necklace.png" alt="Nose Pins" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">06</span>
+          <div>
+            <p class="allcat-name">Nose Pins</p>
+            <p class="allcat-desc">Delicate daily elegance</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+      <div class="allcat-row" onclick="">
+        <img src="assets/images/temple_necklace.png" alt="Anklets" class="allcat-img"/>
+        <div class="allcat-overlay"></div>
+        <div class="allcat-text">
+          <span class="allcat-num">07</span>
+          <div>
+            <p class="allcat-name">Anklets</p>
+            <p class="allcat-desc">Payal with every step</p>
+          </div>
+        </div>
+        <button class="allcat-arrow">→</button>
+      </div>
+    </div>
+
+    <!-- ALL PRODUCTS GRID -->
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <p class="section-label">OUR PRODUCTS</p>
+          <h2 class="section-title">All Pieces</h2>
+        </div>
+      </div>
+      <div class="featured-grid">
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/kundan_haar.png" alt="Royal Kundan Haar"/></div>
+          <div class="product-info">
+            <p class="product-name">Royal Kundan Haar</p>
+            <p class="product-price">₹ 1,85,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/temple_necklace.png" alt="Lakshmi Temple Necklace"/></div>
+          <div class="product-info">
+            <p class="product-name">Lakshmi Temple Necklace</p>
+            <p class="product-price">₹ 1,42,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/gold_ring.png" alt="Solitaire Diamond Ring"/></div>
+          <div class="product-info">
+            <p class="product-name">Solitaire Diamond Ring</p>
+            <p class="product-price">₹ 89,500</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/diamond_earrings.png" alt="Peacock Jhumka"/></div>
+          <div class="product-info">
+            <p class="product-name">Peacock Jhumka</p>
+            <p class="product-price">₹ 42,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/bangles_market.png" alt="Bridal Bangle Set"/></div>
+          <div class="product-info">
+            <p class="product-name">Bridal Bangle Set</p>
+            <p class="product-price">₹ 72,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/mangalsutra.png" alt="Classic Mangalsutra"/></div>
+          <div class="product-info">
+            <p class="product-name">Classic Mangalsutra</p>
+            <p class="product-price">₹ 58,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/hero_necklace.png" alt="Filigree Choker"/></div>
+          <div class="product-info">
+            <p class="product-name">Filigree Gold Choker</p>
+            <p class="product-price">₹ 1,12,000</p>
+          </div>
+        </div>
+        <div class="product-card">
+          <div class="product-img-wrap"><img src="assets/images/temple_necklace.png" alt="Heart Diamond Pendant"/></div>
+          <div class="product-info">
+            <p class="product-name">Heart Diamond Pendant</p>
+            <p class="product-price">₹ 35,600</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div><!-- /SHOP PAGE -->
+
+  <!-- ===== WISHLIST PAGE ===== -->
+  <div class="page" id="page-wishlist">
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4AF37">
+          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/>
+        </svg>
+        <span class="logo-text">ANUVAISH</span>
+      </div>
+    </header>
+    <div class="empty-page">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+      </svg>
+      <h2>Your Wishlist</h2>
+      <p>Save pieces you love and find them here.</p>
+      <button class="btn-primary" onclick="showPage('shop')">Browse Collection</button>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <div class="page" id="page-contact">
+    <header class="header">
+      <div class="logo">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#D4AF37">
+          <path d="M12 2L2 8l10 6 10-6-10-6zM2 16l10 6 10-6M2 12l10 6 10-6"/>
+        </svg>
+        <span class="logo-text">ANUVAISH</span>
+      </div>
+    </header>
+    <div class="contact-wrap">
+      <p class="section-label">GET IN TOUCH</p>
+      <h2 class="contact-title">Contact Us</h2>
+      <p class="contact-sub">We'd love to hear from you. Reach out for custom orders, queries, or store visits.</p>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <svg width="28" height="28" fill="none" stroke="#D4AF37" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.82 19.79 19.79 0 01.01 1.22 2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+          </svg>
+          <p class="contact-card-label">Phone</p>
+          <p class="contact-card-value">+91 98765 43210</p>
+        </div>
+        <div class="contact-card">
+          <svg width="28" height="28" fill="none" stroke="#D4AF37" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          <p class="contact-card-label">Email</p>
+          <p class="contact-card-value">hello@anuvaish.com</p>
+        </div>
+        <div class="contact-card">
+          <svg width="28" height="28" fill="none" stroke="#D4AF37" stroke-width="1.5" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <p class="contact-card-label">Visit Us</p>
+          <p class="contact-card-value">12, Gold Bazaar, Jaipur, Rajasthan</p>
+        </div>
+      </div>
+
+      <form class="contact-form" onsubmit="return false">
+        <input type="text" placeholder="Your Name" class="form-input" id="contact-name"/>
+        <input type="email" placeholder="Email Address" class="form-input" id="contact-email"/>
+        <input type="tel" placeholder="Phone Number" class="form-input" id="contact-phone"/>
+        <textarea placeholder="Your message…" class="form-input form-textarea" id="contact-msg"></textarea>
+        <button class="btn-primary btn-full" type="submit">Send Message</button>
+      </form>
+
+      <div class="store-hours">
+        <p class="section-label">STORE HOURS</p>
+        <div class="hours-row"><span>Monday – Saturday</span><span>10:00 AM – 8:00 PM</span></div>
+        <div class="hours-row"><span>Sunday</span><span>11:00 AM – 6:00 PM</span></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
