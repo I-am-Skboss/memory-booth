@@ -1,0 +1,18 @@
+{
+  "id": "boltex",
+  "name": "Boltex",
+  "subtitle": "Formerly Gravity Habits",
+  "tagline": "Activity Tracking • Fitness Rewards • Social Feed",
+  "description": "A next-gen fitness & activity tracking platform. Log workouts with real-time GPS polylines, sync with Apple Health & Google Health Connect, earn step rewards, and share with your community.",
+  "bannerGradient": "linear-gradient(135deg, #121212 0%, #1e293b 100%)",
+  "bannerText": "BOLTEX",
+  "bannerSubtext": "Formerly Gravity Habits",
+  "bannerTextColor": "linear-gradient(90deg, #3b82f6, #60a5fa)",
+  "primaryAction": {
+    "text": "Visit Boltex",
+    "url": "https://boltex.app",
+    "target": "_blank"
+  },
+  "privacyPolicy": "privacy.html",
+  "order": 1
+}

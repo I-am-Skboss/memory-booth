@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - MojiBoom</title>
+    <title>Privacy Policy - Memory Booth</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,55 @@
         body {
             line-height: 1.6;
             padding: 40px 20px;
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             background-color: var(--bg-color);
             color: var(--text-color);
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .back-home {
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+        .back-home:hover {
+            color: var(--accent-color);
+        }
+
+        .policy-nav {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .policy-nav-link {
+            padding: 0.6rem 1.25rem;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .policy-nav-link:hover {
+            border-color: var(--text-color);
+            background-color: var(--border-color);
         }
 
         .privacy-container {
@@ -27,34 +72,67 @@
             border-radius: 24px;
             border: 1px solid var(--border-color);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 3rem;
+            scroll-margin-top: 2rem;
+        }
+
+        .app-badge {
+            display: inline-block;
+            padding: 0.35rem 0.85rem;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            font-weight: 700;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
 
         h1 {
             font-family: var(--font-heading);
-            font-size: 3rem;
+            font-size: 2.75rem;
             margin-bottom: 0.5rem;
             color: var(--text-color);
+            line-height: 1.2;
         }
 
         h2 {
             font-family: var(--font-heading);
-            font-size: 1.8rem;
-            margin-top: 2rem;
+            font-size: 1.75rem;
+            margin-top: 2.25rem;
             margin-bottom: 1rem;
             color: var(--text-color);
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 0.5rem;
         }
 
-        p,
-        ul {
-            margin-bottom: 1.5rem;
-            color: var(--secondary-text);
-            font-size: 1.1rem;
+        h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color);
         }
 
-        ul {
-            padding-left: 20px;
+        h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            margin-top: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        p,
+        ul,
+        ol {
+            margin-bottom: 1.25rem;
+            color: var(--secondary-text);
+            font-size: 1.05rem;
+        }
+
+        ul, ol {
+            padding-left: 24px;
         }
 
         li {
@@ -71,11 +149,92 @@
             text-decoration: underline;
         }
 
+        code {
+            background-color: rgba(0, 0, 0, 0.06);
+            padding: 0.2rem 0.45rem;
+            border-radius: 6px;
+            font-family: monospace;
+            font-size: 0.9em;
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] code {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
         .last-updated {
             font-weight: 600;
             color: var(--accent-color);
             margin-bottom: 2rem;
             display: block;
+        }
+
+        /* Table Styling */
+        .privacy-table-wrapper {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .privacy-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: left;
+        }
+
+        .privacy-table th,
+        .privacy-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+        }
+
+        .privacy-table th:last-child,
+        .privacy-table td:last-child {
+            border-right: none;
+        }
+
+        .privacy-table th {
+            background-color: rgba(0, 0, 0, 0.03);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        [data-theme="dark"] .privacy-table th {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .privacy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .privacy-table tr:nth-child(even) td {
+            background-color: rgba(0, 0, 0, 0.015);
+        }
+
+        [data-theme="dark"] .privacy-table tr:nth-child(even) td {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .contact-box {
+            background-color: rgba(0, 0, 0, 0.025);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        [data-theme="dark"] .contact-box {
+            background-color: rgba(255, 255, 255, 0.03);
+        }
+
+        .policy-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+            margin: 4rem 0;
         }
 
         .footer-note {
@@ -87,138 +246,363 @@
             text-align: center;
         }
 
-        .back-home {
-            display: inline-block;
-            margin-bottom: 2rem;
-            font-weight: 600;
-            color: var(--text-color);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+        @media (max-width: 768px) {
+            .privacy-container {
+                padding: 1.75rem 1.25rem;
+            }
 
-        .back-home:hover {
-            color: var(--accent-color);
+            h1 {
+                font-size: 2.1rem;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
         }
     </style>
 </head>
 
 <body data-theme="dark">
-    <a href="index.html" class="back-home">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
-            <path fill="currentColor"
-                d="M224 128a8 8 0 0 1-8 8H59.31l58.35 58.34a8 8 0 0 1-11.32 11.32l-72-72a8 8 0 0 1 0-11.32l72-72a8 8 0 0 1 11.32 11.32L59.31 120H216a8 8 0 0 1 8 8Z" />
-        </svg>
-        Back to Memory Booth
-    </a>
+    <div class="header-bar">
+        <a href="index.html" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+                <path fill="currentColor"
+                    d="M224 128a8 8 0 0 1-8 8H59.31l58.35 58.34a8 8 0 0 1-11.32 11.32l-72-72a8 8 0 0 1 0-11.32l72-72a8 8 0 0 1 11.32 11.32L59.31 120H216a8 8 0 0 1 8 8Z" />
+            </svg>
+            Back to Memory Booth
+        </a>
 
-    <div class="privacy-container">
-        <h1>Privacy Policy</h1>
-        <span class="last-updated">Last updated: March 06, 2026</span>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
 
-        <p>This privacy policy applies to the MojiBoom app (herein referred to as "Application") for mobile devices that
-            was created by MemoryBooth (herein referred to as "Service Provider") as a Commercial service. This service
-            is intended for use "AS IS".</p>
+    <!-- Policy Jump Navigation -->
+    <div class="policy-nav" id="policy-nav">
+        <a href="#boltex" class="policy-nav-link">Boltex Privacy Policy</a>
+        <a href="#mojiboom" class="policy-nav-link">MojiBoom Privacy Policy</a>
+    </div>
 
-        <h2>Information Collection and Use</h2>
-        <p>The Application collects information when you download and use it. This information may include information
-            such as:</p>
-        <ul>
-            <li>Your device's IP address</li>
-            <li>The Application pages you visit, the time and date of your visit, the time spent on those pages</li>
-            <li>The time spent on the Application</li>
-            <li>The operating system you use on your mobile device</li>
-        </ul>
+    <!-- Privacy Policy Sections Container -->
+    <div id="privacy-sections">
+        <!-- Boltex Privacy Policy Section -->
+        <div class="privacy-container" id="boltex">
+            <span class="app-badge">Boltex App</span>
+            <h1>Privacy Policy for Boltex</h1>
+            <span class="last-updated">Last Updated & Effective Date: August 3, 2026</span>
 
-        <p>The Application does not gather precise information about the location of your mobile device.</p>
+            <p>Welcome to <strong>Boltex</strong> (formerly known as <em>Gravity Habits</em>), operated by <strong>Memory Booth Solutions</strong> ("Company", "we", "us", or "our"). We respect your privacy and are committed to protecting your personal data.</p>
 
-        <p>The Service Provider may use the information you provided to contact you from time to time to provide you
-            with important information, required notices and marketing promotions.</p>
+            <p>This Privacy Policy explains how we collect, use, disclose, sync, store, transfer, and protect your information when you use our mobile application (<strong>Boltex</strong>, available on Android and iOS), our website (<a href="https://boltex.app" target="_blank">https://boltex.app</a>), and associated backend services (collectively, the "Services").</p>
 
-        <p>For a better experience, while using the Application, the Service Provider may require you to provide us with
-            certain personally identifiable information. The information that the Service Provider requests will be
-            retained by them and used as described in this privacy policy.</p>
+            <p>By creating an account, accessing, or using the Services, you acknowledge that you have read, understood, and agree to the practices described in this Privacy Policy.</p>
 
-        <h2>Third Party Access</h2>
-        <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider
-            in improving the Application and their service. The Service Provider may share your information with third
-            parties in the ways that are described in this privacy statement.</p>
+            <h2>1. Data Controller Contact Details</h2>
+            <div class="contact-box">
+                <p style="margin-bottom: 0.5rem;"><strong>Data Controller:</strong> Memory Booth Solutions</p>
+                <p style="margin-bottom: 0.5rem;"><strong>Primary Contact Email:</strong> <a href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a></p>
+                <p style="margin-bottom: 0.5rem;"><strong>Application Name:</strong> Boltex</p>
+                <p style="margin-bottom: 0;"><strong>Official Website:</strong> <a href="https://boltex.app" target="_blank">https://boltex.app</a></p>
+            </div>
+            <p>If you have any questions regarding this Privacy Policy or wish to exercise your legal data privacy rights, please contact us at the email address above.</p>
 
-        <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about
-            handling data. Below are the links to the Privacy Policy of the third-party service providers used by the
-            Application:</p>
-        <ul>
-            <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
-            <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
-        </ul>
+            <h2>2. Categories of Information We Collect</h2>
+            <p>We collect information directly from you, automatically via your mobile device sensors, and through integrated third-party platforms.</p>
 
-        <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
-        <ul>
-            <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
-            <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your
-                safety or the safety of others, investigate fraud, or respond to a government request;</li>
-            <li>with their trusted services providers who work on their behalf, do not have an independent use of the
-                information we disclose to them, and have agreed to adhere to the rules set forth in this privacy
-                statement.</li>
-        </ul>
+            <h3>A. Information You Provide Directly</h3>
+            <ul>
+                <li><strong>Account Credentials:</strong> Email address, password hashes (secured via Supabase Auth), unique Supabase User ID (UUID).</li>
+                <li><strong>Profile & Identity Data:</strong> Chosen username/handle, profile biography, avatar profile image URL, subscription/pro status (<code>is_pro</code>).</li>
+                <li><strong>User-Generated Content (UGC):</strong> Photos and images uploaded to posts, textual feed posts, activity titles, activity descriptions, comments, threaded replies, post/run likes, follow/follower connections, club memberships, and challenge entries.</li>
+                <li><strong>Equipment & Gear Data:</strong> Brand name, model, and cumulative distance logged for running shoes, bicycles, or other sports gear.</li>
+                <li><strong>Support & Communications:</strong> Records of support tickets, bug reports, and emails sent to <code>memorybooth.solutions@gmail.com</code>.</li>
+            </ul>
 
-        <h2>Opt-Out Rights</h2>
-        <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the
-            standard uninstall processes as may be available as part of your mobile device or via the mobile application
-            marketplace or network.</p>
+            <h3>B. Location Data (Precise & Approximate)</h3>
+            <ul>
+                <li><strong>Real-Time GPS Coordinates:</strong> Latitude, longitude, altitude, movement speed, distance traveled, split times, and timestamped route polylines.</li>
+                <li><strong>Collection Scenarios:</strong> Collected in the <strong>foreground</strong> while recording an active workout, and in the <strong>background</strong> if you navigate away from the app during an ongoing tracking session.</li>
+                <li><strong>Privacy Zones:</strong> User-defined geofenced buffers that obscure exact starting and ending coordinates of public activity maps to protect your home or office address.</li>
+            </ul>
 
-        <h2>Data Retention Policy</h2>
-        <p>The Service Provider will retain User Provided data for as long as you use the Application and for a
-            reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the
-            Application, please contact them at <a
-                href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a> and they will respond
-            in a reasonable time.</p>
+            <h3>C. Physical Motion, Health & Sensor Data</h3>
+            <ul>
+                <li><strong>Hardware Sensor Telemetry:</strong> Pedometer step counts, step cadence, physical activity recognition (<code>ACTIVITY_RECOGNITION</code>), and motion sensor data.</li>
+                <li><strong>Workout Metrics:</strong> Activity type (running, walking, cycling, etc.), duration, active calorie burn estimates (calculated using MET values).</li>
+                <li><strong>Apple Health & Google Health Connect Sync:</strong>
+                    <ul>
+                        <li><em>Read Access:</em> Imported step counts and historical fitness data from Apple Health (iOS) or Google Health Connect (Android).</li>
+                        <li><em>Write Access:</em> Exported completed workout summaries (distance, duration, calories, activity type) to Apple Health or Google Health Connect upon your explicit authorization.</li>
+                    </ul>
+                </li>
+            </ul>
 
-        <h2>Children's Privacy</h2>
-        <p>The Application is designed for a general audience. We have implemented a "Neutral Age Screen" to identify the age of our users. For users who identify as under the age of 13:</p>
-        <ul>
-            <li>We do not knowingly collect, use, or disclose any personally identifiable information.</li>
-            <li>We automatically configure the AdMob SDK to disable personalized advertising and behavioral tracking.</li>
-            <li>We only serve advertisements that are rated G (General) and are from Google Play Families Self-Certified Ads SDKs.</li>
-        </ul>
-        <p>If you are a parent or guardian and believe we have inadvertently collected information from your child, please contact us at <a href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a>.</p>
+            <h3>D. Monetization, Ad & Financial Data</h3>
+            <ul>
+                <li><strong>Advertising Identifiers:</strong> Google Advertising ID (GAID on Android) and IDFA (on iOS), managed via Google Mobile Ads (AdMob).</li>
+                <li><strong>Reward Economy & Wallet Records:</strong> Gravity Coin earnings (step rewards), AdCoin balances (earned by watching video ads), ad impression events, video completion logs, and digital wallet balance transaction records.</li>
+                <li><strong>Payment & Payout Information:</strong> Transaction logs, wallet redemption records, and payout destination details (bank/UPI details provided for coin redemptions).</li>
+            </ul>
 
-        <h2>Security</h2>
-        <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service
-            Provider provides physical, electronic, and procedural safeguards to protect information the Service
-            Provider processes and maintains.</p>
+            <h3>E. Technical & Device Diagnostics Data</h3>
+            <ul>
+                <li><strong>Device Characteristics:</strong> Device model, hardware manufacturer, operating system version, screen resolution, language settings.</li>
+                <li><strong>Network & Connection:</strong> IP address, mobile network state, internet connectivity indicators (<code>connectivity_plus</code>).</li>
+                <li><strong>System Logs & Diagnostics:</strong> App performance metrics, crash reports, error stack traces, and local SQLite cache logs.</li>
+            </ul>
 
-        <h2>Changes</h2>
-        <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of
-            any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to
-            consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
-        </p>
+            <h2>3. How We Use Your Data & Legal Bases for Processing</h2>
+            <p>We process your personal data under the following legal bases recognized by data privacy laws (such as GDPR, UK GDPR, and CCPA/CPRA):</p>
 
-        <h2>Your Consent</h2>
-        <p>By using the Application, you are consenting to the processing of your information as set forth in this
-            Privacy Policy now and as amended by us.</p>
+            <div class="privacy-table-wrapper">
+                <table class="privacy-table">
+                    <thead>
+                        <tr>
+                            <th>Processing Purpose</th>
+                            <th>Categories of Data Used</th>
+                            <th>Legal Basis (GDPR/UK GDPR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Core App & GPS Activity Tracking</strong></td>
+                            <td>Location, GPS Polylines, Motion Sensors, Account ID</td>
+                            <td><strong>Contractual Necessity</strong> (Providing service)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pedometer & Step Counting</strong></td>
+                            <td>Step Sensors, Health Connect / Apple Health, Motion Data</td>
+                            <td><strong>Contractual Necessity</strong> & <strong>Explicit Consent</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Community Feed & Social Features</strong></td>
+                            <td>UGC, Photos, Username, Avatar, Likes, Comments, Followers</td>
+                            <td><strong>Contractual Necessity</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ad-Reward Economy & Digital Wallet</strong></td>
+                            <td>AdMob Identifiers, Ad Watch Logs, Coin Balances, Wallet Info</td>
+                            <td><strong>Contractual Necessity</strong> & <strong>Legitimate Interests</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Health Platform Syncing</strong></td>
+                            <td>Apple Health / Google Health Connect Steps & Workouts</td>
+                            <td><strong>Explicit Consent</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Personalized & Targeted Advertising</strong></td>
+                            <td>Ad Identifiers (GAID/IDFA), IP Address, General Location</td>
+                            <td><strong>Consent</strong> (where required) / <strong>Legitimate Interests</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Commercial Research & Data Licensing</strong></td>
+                            <td>Anonymized / Aggregated Route Polylines & Movement Telemetry</td>
+                            <td><strong>Explicit Consent</strong> & <strong>Legitimate Interests</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>AI Model Training & Algorithm Optimization</strong></td>
+                            <td>Anonymized / Pseudonymized Route Data & Sensor Logs</td>
+                            <td><strong>Legitimate Interests</strong> & <strong>Consent</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fraud Detection & Security</strong></td>
+                            <td>GPS Coordinates, Step Velocity, Ad Completion Logs, IP</td>
+                            <td><strong>Legitimate Interests</strong> (Anti-Fraud)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h2>Contact Us</h2>
-        <p>If you have any questions regarding privacy while using the Application, or have questions about the
-            practices, please contact the Service Provider via email at <a
-                href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a>.</p>
+            <h3>Detailed Disclosures on Specific Processing Operations:</h3>
+
+            <h4>1. Targeted & Personalized Advertising (Google AdMob)</h4>
+            <p>We integrate Google Mobile Ads (AdMob) to deliver advertisements and reward users with AdCoins. AdMob may use device advertising identifiers (GAID/IDFA) and cookies/SDK tokens to serve targeted ads based on your interests, general region, and app interaction. You can opt out of personalized advertising at any time via your device operating system settings or in-app consent preferences.</p>
+
+            <h4>2. Commercial Research & Aggregated Data Licensing</h4>
+            <p>We may aggregate, anonymize, or pseudonymize location route data, workout telemetry, step statistics, and demographic trends. We use or share these non-personally identifiable, aggregated datasets with third-party partners, urban planners, fitness equipment manufacturers, research institutions, and data analytics firms for commercial research, product strategy, and industry benchmarks.</p>
+
+            <h4>3. Artificial Intelligence (AI) & Machine Learning (ML) Training</h4>
+            <p>We utilize anonymized or pseudonymized activity logs, route coordinates, cadence telemetry, and user interaction patterns to train artificial intelligence models, refine activity-recognition algorithms, prevent cheating/ghost-running, and develop automated AI fitness coaching tools. <strong>We do not sell raw, un-anonymized health or location data to third parties for AI training without your explicit consent.</strong></p>
+
+            <h4>4. Anti-Fraud & Security Enforcement</h4>
+            <p>To protect our ad revenue-sharing economy, we analyze step velocity, GPS movement consistency, and ad watch intervals. Accounts detected using mock GPS spoofers, automated step shakers, ad bots, or emulator scripts will have their coin balances forfeited and accounts permanently banned.</p>
+
+            <h2>4. Third-Party Service Providers & Data Sharing</h2>
+            <p>We do not sell your personally identifiable information (PII) to third parties. We share data only with trusted service providers operating under strict data processing agreements:</p>
+            <ol>
+                <li><strong>Supabase, Inc. (Backend Infrastructure & Authentication):</strong> Data Shared: User authentication tokens, email, encrypted profile data, uploaded photos, database records. Location: Global cloud infrastructure (US/EU).</li>
+                <li><strong>Google LLC (Google Mobile Ads / AdMob & Google Health Connect):</strong> Data Shared: Device Advertising IDs, ad impressions, health step telemetry (when authorized).</li>
+                <li><strong>Apple Inc. (Apple HealthKit):</strong> Data Shared: Workout summaries and step telemetry (when authorized).</li>
+                <li><strong>OpenStreetMap / Map Tile Providers:</strong> Data Shared: Anonymous map tile requests containing viewport bounding boxes.</li>
+                <li><strong>Legal & Regulatory Authorities:</strong> We may disclose information if required by court order, subpoena, law, or to protect the vital security of our users and platform.</li>
+            </ol>
+
+            <h2>5. User Privacy Rights & Choices (GDPR, UK GDPR, CCPA/CPRA, US State Laws)</h2>
+            <p>Depending on your jurisdiction, you have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Right of Access & Portability:</strong> Request a copy of the personal data we hold about you, including your GPS run history and profile data.</li>
+                <li><strong>Right to Rectification:</strong> Update or correct inaccurate account information directly in app settings.</li>
+                <li><strong>Right to Erasure (Account Deletion):</strong> Request permanent deletion of your account and associated data. You can initiate account deletion inside the Boltex app settings or by emailing <code>memorybooth.solutions@gmail.com</code>.</li>
+                <li><strong>Right to Withdraw Consent:</strong> Revoke permissions for Location, Motion Sensors, Apple Health, Google Health Connect, or Personalized Ads at any time via device settings.</li>
+                <li><strong>Right to Opt-Out of Sale / Sharing / Targeted Ads:</strong> Request that your pseudonymized or aggregated data be excluded from commercial data licensing or targeted advertising.</li>
+                <li><strong>Non-Discrimination:</strong> We will not discriminate against you for exercising any of your legal privacy rights.</li>
+            </ul>
+
+            <p>To submit a privacy rights request, email us at <strong><a href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a></strong> with the subject line <em>"Data Privacy Request"</em>. We respond to all requests within 30 days.</p>
+
+            <h2>6. Data Retention & Security</h2>
+
+            <h3>Retention Period</h3>
+            <ul>
+                <li><strong>Active Accounts:</strong> We retain your account, profile, activity runs, posts, and coin records for as long as your account remains active.</li>
+                <li><strong>Deleted Accounts:</strong> Upon receiving an account deletion request, all personal identifiers, email records, profiles, and un-aggregated GPS logs are permanently erased from our Supabase production database within 30 days.</li>
+                <li><strong>Anonymized Analytics:</strong> Fully anonymized, aggregated statistical datasets (which cannot be linked back to any individual) may be retained indefinitely for historical reporting and AI model training.</li>
+            </ul>
+
+            <h3>Data Security Measures</h3>
+            <p>We implement industry-standard technical and organizational security measures:</p>
+            <ul>
+                <li>All data in transit is encrypted using <strong>TLS 1.3 / SSL</strong>.</li>
+                <li>Production database storage in Supabase is protected with <strong>AES-256 encryption at rest</strong>.</li>
+                <li>Row Level Security (RLS) policies strictly isolate user database records so users can only access authorized data.</li>
+            </ul>
+
+            <h2>7. International Data Transfers</h2>
+            <p>Your information may be transferred to, stored, and processed in servers located outside of your state, province, or country (including the United States and European Union). We ensure that international data transfers comply with applicable data protection laws through Standard Contractual Clauses (SCCs) and robust cloud infrastructure safeguards.</p>
+
+            <h2>8. Children's Privacy</h2>
+            <p>Boltex is intended solely for users aged <strong>13 and older</strong> (or 16 and older in certain EU jurisdictions). We do not knowingly solicit or collect personal information from children under 13. If we discover that a child under 13 has created an account, we will immediately delete their account and purge all associated data. If you believe a minor has provided us with personal information, please contact <code>memorybooth.solutions@gmail.com</code>.</p>
+
+            <h2>9. Changes to This Privacy Policy</h2>
+            <p>We may update this Privacy Policy periodically to reflect app updates, legal requirements, or changes in our data practices. When updates are made, we will revise the "Last Updated" date at the top of this policy and notify you via an in-app banner or email notification prior to the changes taking effect.</p>
+
+            <h2>10. Contact Us</h2>
+            <p>If you have questions, concerns, or complaints regarding this Privacy Policy or our data handling practices, please contact us:</p>
+            <div class="contact-box">
+                <p style="margin-bottom: 0.5rem;"><strong>Memory Booth Solutions</strong></p>
+                <p style="margin-bottom: 0.5rem;">📩 <strong>Email:</strong> <a href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a></p>
+                <p style="margin-bottom: 0;">🌐 <strong>Website:</strong> <a href="https://boltex.app" target="_blank">https://boltex.app</a></p>
+            </div>
+        </div>
+
+        <div class="policy-divider"></div>
+
+        <!-- MojiBoom Privacy Policy Section -->
+        <div class="privacy-container" id="mojiboom">
+            <span class="app-badge">MojiBoom App</span>
+            <h1>Privacy Policy for MojiBoom</h1>
+            <span class="last-updated">Last updated: March 06, 2026</span>
+
+            <p>This privacy policy applies to the MojiBoom app (herein referred to as "Application") for mobile devices that
+                was created by MemoryBooth (herein referred to as "Service Provider") as a Commercial service. This service
+                is intended for use "AS IS".</p>
+
+            <h2>Information Collection and Use</h2>
+            <p>The Application collects information when you download and use it. This information may include information
+                such as:</p>
+            <ul>
+                <li>Your device's IP address</li>
+                <li>The Application pages you visit, the time and date of your visit, the time spent on those pages</li>
+                <li>The time spent on the Application</li>
+                <li>The operating system you use on your mobile device</li>
+            </ul>
+
+            <p>The Application does not gather precise information about the location of your mobile device.</p>
+
+            <p>The Service Provider may use the information you provided to contact you from time to time to provide you
+                with important information, required notices and marketing promotions.</p>
+
+            <p>For a better experience, while using the Application, the Service Provider may require you to provide us with
+                certain personally identifiable information. The information that the Service Provider requests will be
+                retained by them and used as described in this privacy policy.</p>
+
+            <h2>Third Party Access</h2>
+            <p>Only aggregated, anonymized data is periodically transmitted to external services to aid the Service Provider
+                in improving the Application and their service. The Service Provider may share your information with third
+                parties in the ways that are described in this privacy statement.</p>
+
+            <p>Please note that the Application utilizes third-party services that have their own Privacy Policy about
+                handling data. Below are the links to the Privacy Policy of the third-party service providers used by the
+                Application:</p>
+            <ul>
+                <li><a href="https://www.google.com/policies/privacy/" target="_blank">Google Play Services</a></li>
+                <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank">AdMob</a></li>
+            </ul>
+
+            <p>The Service Provider may disclose User Provided and Automatically Collected Information:</p>
+            <ul>
+                <li>as required by law, such as to comply with a subpoena, or similar legal process;</li>
+                <li>when they believe in good faith that disclosure is necessary to protect their rights, protect your
+                    safety or the safety of others, investigate fraud, or respond to a government request;</li>
+                <li>with their trusted services providers who work on their behalf, do not have an independent use of the
+                    information we disclose to them, and have agreed to adhere to the rules set forth in this privacy
+                    statement.</li>
+            </ul>
+
+            <h2>Opt-Out Rights</h2>
+            <p>You can stop all collection of information by the Application easily by uninstalling it. You may use the
+                standard uninstall processes as may be available as part of your mobile device or via the mobile application
+                marketplace or network.</p>
+
+            <h2>Data Retention Policy</h2>
+            <p>The Service Provider will retain User Provided data for as long as you use the Application and for a
+                reasonable time thereafter. If you'd like them to delete User Provided Data that you have provided via the
+                Application, please contact them at <a
+                    href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a> and they will respond
+                in a reasonable time.</p>
+
+            <h2>Children's Privacy</h2>
+            <p>The Application is designed for a general audience. We have implemented a "Neutral Age Screen" to identify the age of our users. For users who identify as under the age of 13:</p>
+            <ul>
+                <li>We do not knowingly collect, use, or disclose any personally identifiable information.</li>
+                <li>We automatically configure the AdMob SDK to disable personalized advertising and behavioral tracking.</li>
+                <li>We only serve advertisements that are rated G (General) and are from Google Play Families Self-Certified Ads SDKs.</li>
+            </ul>
+            <p>If you are a parent or guardian and believe we have inadvertently collected information from your child, please contact us at <a href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a>.</p>
+
+            <h2>Security</h2>
+            <p>The Service Provider is concerned about safeguarding the confidentiality of your information. The Service
+                Provider provides physical, electronic, and procedural safeguards to protect information the Service
+                Provider processes and maintains.</p>
+
+            <h2>Changes</h2>
+            <p>This Privacy Policy may be updated from time to time for any reason. The Service Provider will notify you of
+                any changes to the Privacy Policy by updating this page with the new Privacy Policy. You are advised to
+                consult this Privacy Policy regularly for any changes, as continued use is deemed approval of all changes.
+            </p>
+
+            <h2>Your Consent</h2>
+            <p>By using the Application, you are consenting to the processing of your information as set forth in this
+                Privacy Policy now and as amended by us.</p>
+
+            <h2>Contact Us</h2>
+            <p>If you have any questions regarding privacy while using the Application, or have questions about the
+                practices, please contact the Service Provider via email at <a
+                    href="mailto:memorybooth.solutions@gmail.com">memorybooth.solutions@gmail.com</a>.</p>
+        </div>
     </div>
 
     <div class="footer-note">
         <p>&copy; 2026 Memory Booth. All rights reserved.</p>
-        <p>Generated by App Privacy Policy Generator</p>
     </div>
 
-    <script>
-        // Use the same theme logic as the main site
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.body.setAttribute('data-theme', savedTheme);
-        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.body.setAttribute('data-theme', 'dark');
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
+

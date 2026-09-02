@@ -1,0 +1,14 @@
+{
+  "id": "restrauntpro",
+  "name": "RestrauntPro",
+  "tagline": "All-in-One Multi-Tenant Restaurant SaaS • POS, CRM & Growth",
+  "description": "Advanced all-in-one management SaaS built for modern, high-growth restaurants. Combines lightning-fast POS & billing, smart recipe inventory, kitchen display systems (KDS), automated WhatsApp/SMS loyalty CRM, and multi-location analytics.",
+  "bannerImage": "restrauntpro-banner.png",
+  "primaryAction": {
+    "text": "Visit RestrauntPro",
+    "url": "https://www.restrauntpro.com",
+    "target": "_blank"
+  },
+  "privacyPolicy": null,
+  "order": 3
+}

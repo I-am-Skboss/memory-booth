@@ -512,6 +512,7 @@ body:not([data-theme="dark"]) .light-mode-hero {
     gap: 1.5rem;
 }
 
+/* Contact Form & Inputs */
 .contact-form input,
 .contact-form textarea {
     padding: 1rem;
@@ -530,16 +531,67 @@ body:not([data-theme="dark"]) .light-mode-hero {
     border-color: var(--text-color);
 }
 
+/* Base CTA Button System */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.6rem;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 50px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease, border-color 0.25s ease;
+    border: 2px solid var(--text-color);
+    width: auto;
+    cursor: pointer;
+    line-height: 1.2;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .cta-button {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+}
+
+[data-theme="dark"] .cta-button:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
 .cta-button.secondary {
     background-color: transparent;
     color: var(--text-color);
-    width: 100%;
+    border: 2px solid var(--border-color);
+    width: auto;
     cursor: pointer;
 }
 
 .cta-button.secondary:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
+    background-color: var(--card-bg);
+    border-color: var(--text-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .cta-button.secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    color: #ffffff;
 }
 
 footer {
@@ -579,7 +631,6 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Simplification for prototype */
     }
 
     .hero-content h1 {
@@ -609,7 +660,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 2.5rem;
-    align-items: start;
+    align-items: stretch; /* Equal height cards across row */
 }
 
 /* ===== Generic Project Card ===== */
@@ -618,8 +669,11 @@ footer {
     overflow: hidden;
     display: flex;
     flex-direction: column;
+    height: 100%;
     border: 1px solid var(--border-color);
-    transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+    border-radius: 20px;
+    background-color: var(--card-bg);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
 .project-card:hover {
@@ -631,9 +685,11 @@ footer {
 /* Banner */
 .project-card-banner {
     width: 100%;
-    height: 260px;
+    height: 240px;
     position: relative;
     overflow: hidden;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 .project-card-banner img {
@@ -647,14 +703,14 @@ footer {
     transform: scale(1.06);
 }
 
-/* Anuvaish — use logo as the banner image (full cover) */
-.anuvaish-banner img {
-    object-fit: contain;
+/* Anuvaish — logo is the banner, shown contained on dark background */
+.anuvaish-banner {
     background-color: #0d0d0d;
 }
 
-.anuvaish-logo-overlay {
-    display: none; /* not needed; logo IS the banner */
+.anuvaish-banner img {
+    object-fit: contain;
+    padding: 1.5rem;
 }
 
 /* Card Content */
@@ -698,34 +754,24 @@ footer {
 .project-card-content .description {
     font-size: 1rem;
     color: var(--secondary-text);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
     line-height: 1.65;
     flex: 1;
 }
 
 .project-card-ctas {
     display: flex;
-    gap: 1rem;
+    gap: 0.85rem;
     flex-wrap: wrap;
     align-items: center;
+    margin-top: auto; /* Aligns all buttons to bottom of card */
+    padding-top: 1rem;
 }
 
 .project-card-ctas .cta-button {
-    padding: 0.75rem 1.6rem;
+    padding: 0.7rem 1.4rem;
     font-size: 0.9rem;
-    min-width: max-content;
-    white-space: nowrap;
-}
-
-.project-card-ctas .cta-button.secondary {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 2px solid var(--border-color);
-}
-
-.project-card-ctas .cta-button.secondary:hover {
-    background-color: var(--card-bg);
-    border-color: var(--text-color);
+    width: auto;
 }
 
 /* Mobile */
@@ -743,11 +789,11 @@ footer {
     }
 
     .project-card-ctas {
-        justify-content: center;
+        justify-content: flex-start;
     }
 
     .project-card-header {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: row;
+        text-align: left;
     }
 }

@@ -1,0 +1,15 @@
+{
+  "id": "mojiboom",
+  "name": "MojiBoom",
+  "tagline": "Merge Emojis • Discover Elements",
+  "description": "A vibrant emoji-merging puzzle adventure where creativity meets strategy. Discover hundreds of unique combinations in a world filled with color and magic.",
+  "bannerImage": "mojibanner.png",
+  "iconImage": "moji icon.png",
+  "primaryAction": {
+    "text": "Download App",
+    "url": "https://play.google.com/store/apps/details?id=com.memorybooth.mojiboom&hl=en_IN",
+    "target": "_blank"
+  },
+  "privacyPolicy": "privacy.html",
+  "order": 2
+}

@@ -1,0 +1,14 @@
+{
+  "id": "makeup-artist",
+  "name": "Atelier Aura",
+  "tagline": "Bespoke Makeup Artistry • Couture Bridal & Editorial",
+  "description": "A premier luxury makeup artistry and editorial beauty studio. Experience bespoke beauty curation for couture brides, high-fashion campaigns, and VIP red carpet appearances with an effortless Parisian touch.",
+  "bannerImage": "atelier-aura-banner.png",
+  "primaryAction": {
+    "text": "Visit Atelier Aura",
+    "url": "makeup-artist/index.html",
+    "target": "_self"
+  },
+  "privacyPolicy": null,
+  "order": 5
+}

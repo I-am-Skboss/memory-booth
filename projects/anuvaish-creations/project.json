@@ -1,0 +1,15 @@
+{
+  "id": "anuvaish-creations",
+  "name": "Anuvaish Creations",
+  "tagline": "Jewellery • Elegance • Craftsmanship",
+  "description": "A premium jewellery e-commerce experience showcasing handcrafted gold and gemstone pieces. Elegant design meets timeless tradition in every product.",
+  "bannerImage": "anuvaish-logo.png",
+  "bannerClass": "anuvaish-banner",
+  "primaryAction": {
+    "text": "Visit Site",
+    "url": "projects/anuvaish-creations/index.html",
+    "target": "_self"
+  },
+  "privacyPolicy": null,
+  "order": 4
+}
