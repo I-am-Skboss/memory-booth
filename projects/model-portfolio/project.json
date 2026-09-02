@@ -1,0 +1,15 @@
+{
+  "id": "model-portfolio",
+  "name": "Gunjan",
+  "subtitle": "Fashion Model & Commercial Muse",
+  "tagline": "High Fashion • Commercial Campaigns • Bridal Glam",
+  "description": "An interactive digital comp card and editorial portfolio for Indian fashion model and creative muse Gunjan. Features curated lookbooks, high-fashion campaigns, and commercial collaboration inquiries.",
+  "bannerImage": "gunjan-portfolio-banner.png",
+  "primaryAction": {
+    "text": "View Portfolio",
+    "url": "projects/model-portfolio/index.html",
+    "target": "_self"
+  },
+  "privacyPolicy": null,
+  "order": 6
+}
