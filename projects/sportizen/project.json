@@ -1,0 +1,16 @@
+{
+  "id": "sportizen",
+  "name": "Sportizen",
+  "subtitle": "Basketball Academy Delhi",
+  "tagline": "Elite Youth Basketball Academy • Professional Coaching • Delhi",
+  "description": "Premier youth basketball coaching academy based at Arwachin International School, Dilshad Garden, Delhi. Supervised by BFI-registered coaches with modern skill development, personalized performance analytics, and structured tournament match play.",
+  "bannerImage": "sportizen-banner.png",
+  "iconImage": "sportizen-logo.png",
+  "primaryAction": {
+    "text": "Visit Sportizen",
+    "url": "https://sportizen.online",
+    "target": "_blank"
+  },
+  "privacyPolicy": null,
+  "order": 4
+}

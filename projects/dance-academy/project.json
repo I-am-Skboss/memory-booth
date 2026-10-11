@@ -1,0 +1,16 @@
+{
+  "id": "dance-academy",
+  "name": "Nrityavritt",
+  "subtitle": "Academy of Classical Kathak Dance",
+  "tagline": "Classical Kathak Dance Academy • Jaipur Gharana • Delhi",
+  "description": "An institute dedicated to the preservation and teaching of Jaipur Gharana Kathak, founded by Kathak practitioner, performer, and educator Guru Namita Dwivedi (Alankar Poorna, Gandharva Mahavidyalaya). Weekend batches open at South Ganesh Nagar, Delhi.",
+  "bannerImage": "dance-banner.jpeg",
+  "iconImage": "dance-logo.jpg",
+  "primaryAction": {
+    "text": "Visit Nrityavritt Academy",
+    "url": "projects/dance-academy/index.html",
+    "target": "_self"
+  },
+  "privacyPolicy": null,
+  "order": 6
+}

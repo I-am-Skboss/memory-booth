@@ -247,6 +247,230 @@ if (h1) {
         }, 30);
     }
 }
+// --- Dynamic Projects Loader & Static Fallback Validator ---
+async function loadProjects() {
+    let slugs = ['boltex', 'mojiboom', 'restrauntpro', 'sportizen', 'anuvaish-creations', 'makeup-artist', 'dance-academy'];
 
+    try {
+        const manifestRes = await fetch('projects/manifest.json');
+        if (manifestRes.ok) {
+            const manifestData = await manifestRes.json();
+            if (Array.isArray(manifestData) && manifestData.length > 0) {
+                slugs = manifestData;
+            }
+        }
+    } catch (e) {
+        // Fallback to default slugs if manifest fetch fails (e.g., local file://)
+    }
 
+    const projects = [];
+
+    for (const slug of slugs) {
+        try {
+            const res = await fetch(`projects/${slug}/project.json`);
+            if (!res.ok) continue; // Folder or project.json missing
+            const data = await res.json();
+            data.folder = slug;
+            projects.push(data);
+        } catch (e) {
+            // Skip missing project
+        }
+    }
+
+    // If fetch failed completely (e.g., file:// protocol), keep static HTML
+    if (projects.length === 0) {
+        return;
+    }
+
+    // Sort projects by order property
+    projects.sort((a, b) => (a.order || 99) - (b.order || 99));
+
+    // 1. Render on Index Page if #projects-grid exists
+    const projectsGrid = document.getElementById('projects-grid');
+    if (projectsGrid) {
+        renderProjectCards(projectsGrid, projects);
+    }
+
+    // 2. Render Footer Links if .footer-links exists
+    const footerLinks = document.querySelector('.footer-links');
+    if (footerLinks) {
+        renderFooterLinks(footerLinks, projects);
+    }
+
+    // 3. Render Privacy Page if #privacy-sections exists
+    const privacySections = document.getElementById('privacy-sections');
+    const policyNav = document.getElementById('policy-nav');
+    if (privacySections) {
+        renderPrivacyPage(privacySections, policyNav, projects);
+    }
+}
+
+function renderProjectCards(container, projects) {
+    container.innerHTML = '';
+    projects.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'card project-card fade-in-section';
+
+        let bannerHtml = '';
+        if (project.bannerImage) {
+            const bannerClass = project.bannerClass ? ` ${project.bannerClass}` : '';
+            bannerHtml = `
+                <div class="project-card-banner${bannerClass}">
+                    <img src="projects/${project.folder}/${project.bannerImage}" alt="${project.name} Banner">
+                </div>
+            `;
+        } else if (project.bannerGradient) {
+            bannerHtml = `
+                <div class="project-card-banner" style="background: ${project.bannerGradient}; display: flex; align-items: center; justify-content: center;">
+                    <div style="text-align: center; color: #fff; padding: 2rem;">
+                        <span style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; background: ${project.bannerTextColor || 'currentColor'}; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">${project.bannerText || project.name}</span>
+                        ${project.bannerSubtext ? `<p style="font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem;">${project.bannerSubtext}</p>` : ''}
+                    </div>
+                </div>
+            `;
+        }
+
+        let iconHtml = '';
+        if (project.iconImage) {
+            iconHtml = `<img src="projects/${project.folder}/${project.iconImage}" alt="${project.name} Icon" class="project-card-icon">`;
+        }
+
+        let primaryCtaHtml = '';
+        if (project.primaryAction) {
+            primaryCtaHtml = `<a href="${project.primaryAction.url}" target="${project.primaryAction.target || '_self'}" class="cta-button">${project.primaryAction.text}</a>`;
+        }
+
+        let privacyCtaHtml = '';
+        if (project.privacyPolicy) {
+            privacyCtaHtml = `<a href="privacy.html#${project.id}" class="cta-button secondary">Privacy Policy</a>`;
+        }
+
+        card.innerHTML = `
+            ${bannerHtml}
+            <div class="project-card-content">
+                <div class="project-card-header">
+                    ${iconHtml}
+                    <div class="project-card-title-group">
+                        <h3>${project.name}</h3>
+                        ${project.tagline ? `<p class="tagline">${project.tagline}</p>` : ''}
+                    </div>
+                </div>
+                <p class="description">${project.description || ''}</p>
+                <div class="project-card-ctas">
+                    ${primaryCtaHtml}
+                    ${privacyCtaHtml}
+                </div>
+            </div>
+        `;
+
+        container.appendChild(card);
+        if (typeof observer !== 'undefined') {
+            observer.observe(card);
+        }
+    });
+}
+
+function renderFooterLinks(container, projects) {
+    let linksHtml = '';
+    projects.forEach((project, idx) => {
+        const marginLeft = idx > 0 ? ' style="margin-left: 20px;"' : '';
+        if (project.privacyPolicy) {
+            linksHtml += `<a href="privacy.html#${project.id}"${marginLeft}>${project.name} Privacy Policy</a>`;
+        } else if (project.primaryAction && project.primaryAction.url) {
+            const targetAttr = project.primaryAction.target ? ` target="${project.primaryAction.target}"` : '';
+            linksHtml += `<a href="${project.primaryAction.url}"${targetAttr}${marginLeft}>${project.name}</a>`;
+        }
+    });
+    linksHtml += `<a href="#legal" style="margin-left: 20px;">Legal</a>`;
+    container.innerHTML = linksHtml;
+}
+
+async function renderPrivacyPage(sectionsContainer, navContainer, projects) {
+    sectionsContainer.innerHTML = '';
+    if (navContainer) navContainer.innerHTML = '';
+
+    const projectsWithPrivacy = projects.filter(p => p.privacyPolicy);
+
+    for (let i = 0; i < projectsWithPrivacy.length; i++) {
+        const project = projectsWithPrivacy[i];
+
+        if (navContainer) {
+            const navLink = document.createElement('a');
+            navLink.href = `#${project.id}`;
+            navLink.className = 'policy-nav-link';
+            navLink.textContent = `${project.name} Privacy Policy`;
+            navContainer.appendChild(navLink);
+        }
+
+        try {
+            const res = await fetch(`projects/${project.folder}/${project.privacyPolicy}`);
+            if (!res.ok) continue;
+            const htmlSnippet = await res.text();
+
+            const privacyDiv = document.createElement('div');
+            privacyDiv.className = 'privacy-container';
+            privacyDiv.id = project.id;
+            privacyDiv.innerHTML = htmlSnippet;
+
+            sectionsContainer.appendChild(privacyDiv);
+
+            if (i < projectsWithPrivacy.length - 1) {
+                const divider = document.createElement('div');
+                divider.className = 'policy-divider';
+                sectionsContainer.appendChild(divider);
+            }
+        } catch (e) {
+            console.error(`Failed to load privacy policy for ${project.id}:`, e);
+        }
+    }
+}
+
+// Automatic Card & Footer Link Visibility Toggle based on Image/Folder Existence
+function validateProjectCards() {
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach(card => {
+        const imgs = card.querySelectorAll('img');
+        if (imgs.length === 0) return;
+
+        imgs.forEach(img => {
+            function updateVisibility() {
+                const isBroken = img.complete && img.naturalWidth === 0;
+                const link = card.querySelector('a[href*="projects/"]');
+                let folderSlug = null;
+                if (link) {
+                    const match = link.getAttribute('href').match(/projects\/([^\/]+)/);
+                    if (match) folderSlug = match[1];
+                }
+
+                if (isBroken) {
+                    card.style.display = 'none';
+                    if (folderSlug) {
+                        document.querySelectorAll(`.footer-links a[href*="${folderSlug}"]`).forEach(fl => {
+                            fl.style.display = 'none';
+                        });
+                    }
+                } else {
+                    card.style.display = '';
+                    if (folderSlug) {
+                        document.querySelectorAll(`.footer-links a[href*="${folderSlug}"]`).forEach(fl => {
+                            fl.style.display = '';
+                        });
+                    }
+                }
+            }
+
+            img.addEventListener('load', updateVisibility);
+            img.addEventListener('error', updateVisibility);
+
+            if (img.complete) {
+                updateVisibility();
+            }
+        });
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadProjects();
+    validateProjectCards();
+});
 
