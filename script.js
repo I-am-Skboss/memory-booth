@@ -249,7 +249,7 @@ if (h1) {
 }
 // --- Dynamic Projects Loader & Static Fallback Validator ---
 async function loadProjects() {
-    let slugs = ['boltex', 'mojiboom', 'restrauntpro', 'sportizen', 'anuvaish-creations', 'makeup-artist', 'dance-academy'];
+    let slugs = ['boltex', 'mojiboom', 'restrauntpro', 'trademeteric', 'sportizen', 'anuvaish-creations', 'makeup-artist', 'dance-academy'];
 
     try {
         const manifestRes = await fetch('projects/manifest.json');

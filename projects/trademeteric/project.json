@@ -1,0 +1,16 @@
+{
+  "id": "trademeteric",
+  "name": "TradeMeteric",
+  "subtitle": "Institutional Trading Journal & Behavioral Analytics",
+  "tagline": "Institutional Trading Journal • Behavioral Analytics • Rule Discipline",
+  "description": "An institutional-grade trading journal and behavioral analytics platform. Quantify execution quality, detect tilt and psychological leaks in real time, backtest playbooks, and scale your trading edge with automated rule discipline.",
+  "bannerImage": "trademeteric-banner.png",
+  "iconImage": "trademeteric-icon.png",
+  "primaryAction": {
+    "text": "Visit TradeMeteric",
+    "url": "https://trademeteric.com",
+    "target": "_blank"
+  },
+  "privacyPolicy": null,
+  "order": 4
+}
