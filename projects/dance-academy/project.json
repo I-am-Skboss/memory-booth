@@ -8,8 +8,8 @@
   "iconImage": "dance-logo.jpg",
   "primaryAction": {
     "text": "Visit Nrityavritt Academy",
-    "url": "projects/dance-academy/index.html",
-    "target": "_self"
+    "url": "https://nrityavritt.org",
+    "target": "_blank"
   },
   "privacyPolicy": null,
   "order": 6
